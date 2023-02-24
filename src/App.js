@@ -20,7 +20,8 @@ function App() {
     axios.get("https://jsonplaceholder.typicode.com/posts")
     // .then((res) => console.log(res.data))
     .then((res)=> setMyData(res.data))
-    .catch((error)=> console.log(error));
+  
+    // .catch((error)=> console.log(error));
     // .then((res) =>
     // console.log(res.data));
     
@@ -34,6 +35,7 @@ function App() {
     <h1 align="center"> Axios </h1>
     <div className="grid">
     {myData.map((post) => {
+      
       const {id, title, body} = post;
       return <div className="card" key={id}>
         <h2>{title}</h2>
