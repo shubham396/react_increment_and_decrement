@@ -37,22 +37,43 @@ export default class ComponentClass extends Component {
 
     render(){
   return (
+     <div>   
+
+    <button onClick={() =>this.setState({renderType:"posts"})}>posts</button>
+    <button onClick={() =>this.setState({renderType:"comments"})}>comments</button>
+    <button onClick={() =>this.setState({renderType:"users"})}>users</button>
+
     <div>
-      
-      <button onClick={() =>this.setState({renderType:"posts"})}>posts</button>
-      <button onClick={() =>this.setState({renderType:"comments"})}>comments</button>
-      <button onClick={() =>this.setState({renderType:"users"})}>users</button>
-      
-      <div>
         <h1>
             {this.state.renderType}
         </h1>
+        <table border={3}>
+        <tr>
+        <th> Posts</th>
+        <th> comments</th>
+        <th> users</th>
+        </tr>
+        <tr >
+                <td>
+        {this.state.items.map((item)=>{
+            return <pre key={item.id}>{JSON.stringify(item.userId)}</pre>
+        })}</td>
+                <td>{this.state.items.map((item)=>{
+            return <pre key={item.id}>{JSON.stringify(item.id)}</pre>
+        })}</td>
+                <td>{this.state.items.map((item)=>{
+            return <pre key={item.id}>{JSON.stringify(item.title)}</pre>
+        })}</td>
+                </tr>
+                </table>
+
+{/*        
         {this.state.items.map((item)=>{
             return <pre key={item.id}>{JSON.stringify(item)}</pre>
         })}
-        
-      </div>
-      
+         */}
+    </div>
+    
     
     
     </div>
