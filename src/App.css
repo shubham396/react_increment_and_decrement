@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  /* background-color: rgb(49, 185, 97); */
 }
 
 .App-logo {
@@ -35,4 +36,18 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.card {
+  padding: 2em;
+  border : 1px solid #888;
+}
+.read-the-docs {
+  color: #888;
+}
+.grid {
+  max-width : 120 rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.6rem;
 }
