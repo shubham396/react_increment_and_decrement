@@ -13,11 +13,11 @@ import ComponentClass from './Components/ComponentDid';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
-      {/* <App /> */}
-      {/* <axi/> */}
+
       <ComponentClass/>
 
-    </React.StrictMode>,
+
+    </React.StrictMode>, 
     
   );
 
