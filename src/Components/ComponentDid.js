@@ -16,7 +16,7 @@ export default class ComponentClass extends React.Component {
       };
   }
 
-  componentDidMount() {
+  componentDidMount() {  
     console.log("componentDidMountCalled",this.state.renderType);
     
     axios.get(`https://jsonplaceholder.typicode.com/${this.state.renderType}`)
@@ -27,7 +27,7 @@ export default class ComponentClass extends React.Component {
 
   componentDidUpdate(prevProps,prevState){
     console.log(this.state.items);
-    if(prevState.renderType!==this.state.renderType){
+    if(prevState.renderType!==this.state.renderType){   
     axios.get(`https://jsonplaceholder.typicode.com/${this.state.renderType}`)
         .then(res => this.setState({
         items:res.data
@@ -46,6 +46,20 @@ del = (id)=> {
     const newItems= this.state.items.filter(items => items.id!== id);
     this.setState({items : newItems});
 }
+compareBy = (key) => {
+  return function(a, b) {
+  if (a[key] < b[key]) return -1;
+  if (a[key] > b[key]) return 1;
+  return 0;
+  };
+};
+
+sorti = (key) => {
+  let arraycopy = [...this.state.items];
+  arraycopy.sort(this.compareBy(key));
+  this.setState({items: arraycopy});
+}
+
 
   
   
@@ -57,11 +71,12 @@ del = (id)=> {
             <button onClick={()=>this.setState({renderType:"comments"})}>Comments</button>
             <button onClick={()=>this.setState({renderType:"users"})}>Users</button>
             <button onClick={()=>this.changeState()}>Reverse</button>
+            <button onClick={()=>this.sorti()}>Sort kardo </button>
             <hr color='black'/>
 
-            {this.state.renderType=== "posts" && <Posts items = {this.state.items} del={this.del}/> }
-            {this.state.renderType === "comments" && <Comments items = {this.state.items}del={this.del}/> }
-            { this.state.renderType==="users" && <Users items = {this.state.items}del={this.del}/>} 
+            {this.state.renderType=== "posts" && <Posts items = {this.state.items} del={this.del} sorti={this.sorti}/> }
+            {this.state.renderType === "comments" && <Comments items = {this.state.items}del={this.del}sorti={this.sorti}/> }
+            { this.state.renderType==="users" && <Users items = {this.state.items}del={this.del}sorti={this.sorti}/>} 
             </center>
             
         </div>

@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios';
+import UnfoldMoreDoubleIcon from '@mui/icons-material/UnfoldMoreDouble';
 
 export default class Posts extends React.Component {
     constructor(props) {
@@ -20,6 +21,11 @@ export default class Posts extends React.Component {
   //   }));
   // }
 
+  
+
+
+
+
 
   render() {
     const Posts = this.props.items;
@@ -34,10 +40,10 @@ export default class Posts extends React.Component {
         <table border={2}>
           <tbody>
             <tr>
-                <th>UserId</th>
-                <th>Id</th>
-                <th>Title</th>
-                <th>Body</th>
+                <th>UserId <UnfoldMoreDoubleIcon   onClick={()=>{this.props.sorti('userId')}}/></th>
+                <th>Id <UnfoldMoreDoubleIcon onClick={()=>{this.props.sorti('id')}}/></th>
+                <th>Title <UnfoldMoreDoubleIcon onClick={()=>{this.props.sorti('title')}}/></th>
+                <th>Body <UnfoldMoreDoubleIcon onClick={()=>{this.props.sorti('body')}}/></th>
                 <th>Delete</th>
             </tr>
           </tbody>
