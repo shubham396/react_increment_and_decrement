@@ -6,11 +6,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* background-color: rgb(193, 102, 167); */
+  background-color: silver;
   /* rgb(81, 37, 193); */
   
-  /* background-image: url('E:\inveswell\react_js\public\chuttersnap-du8x1KNo_20-unsplash.jpg') ;  */
-  /* background-size: cover; */
+  /* background-image: url('E:\inveswell\react_js\public\chuttersnap-du8x1KNo_20-unsplash.jpg') ; 
+  background-size: cover; */
   
 }
 
@@ -35,8 +35,8 @@ code {
 } */
 button {
   
-color: rgb(210, 34, 72);
-background-color: rgb(130, 165, 42);
+color: black;
+background-color: rgb(42, 144, 165);
 /* display: flex;
   justify-content: flex-end; */
 
